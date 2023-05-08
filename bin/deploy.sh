@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BASE_DIR=docsify
-WSDL_DIR=/opt/deg/api/wsdl
+DOC_DIR=/usr/local/nginx/html/doc/
 
 # 二重起動チェック
 shell_name=`basename $0`
@@ -13,8 +13,8 @@ if [ $count -gt 2 ]; then
   exit 1
 fi
 
-if [ ! -d "/var/opt/deg/log/if" ];then
-    mkdir -p /var/opt/deg/log/if
+if [ ! -d "/usr/local/nginx/html/doc/" ];then
+    mkdir -p /usr/local/nginx/html/doc/
 fi
 
 rm -rf ${BASE_DIR}
@@ -26,9 +26,12 @@ fi
 
 # ソースを移動
 cd ${BASE_DIR}
-\cp -r *.xsd ${DOC_DIR}
-\cp -r CarInfo_Backend/IUM/wsdl/*.wsdl ${WSDL_DIR}
-\cp -r CarInfo_Backend/IUM/html/*.html ${HTML_DIR}
-if [ -d "CarInfo_Backend/IUM/script" ]; then
-    \cp -r CarInfo_Backend/IUM/script/*.groovy ${GROOVY_DIR}
-fi
+\cp -r src/* ${DOC_DIR}
+#if [ -d "CarInfo_Backend/IUM/script" ]; then
+#    \cp -r CarInfo_Backend/IUM/script/*.groovy ${GROOVY_DIR}
+#fi
+
+echo -e "docsify deploy completed."
+rm -rf ${BASE_DIR}
+
+exit 0
