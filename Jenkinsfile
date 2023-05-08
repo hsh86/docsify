@@ -1,0 +1,26 @@
+pipeline{
+    agent any
+    stages{
+        stage("first"){
+            steps {
+                echo 'hello world'
+            }
+        }
+        stage("deploy"){
+            steps {
+                sh "chmod +x bin/deploy.sh"
+                sh 'bin/deploy.sh'
+            }
+        }
+        stage("run test"){
+            steps {
+                echo 'run test'
+            }
+        }
+    }
+    post{
+        always{
+            echo 'always say goodbay'
+        }
+    }
+}
