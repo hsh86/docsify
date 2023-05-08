@@ -16,13 +16,14 @@
       - [red black tree](/general/algorithm/data-structures/tree/red-black-tree/README.md)
   - 算法
     - [排序算法](/general/algorithm/algorithms/sorting.md) -->
-- [t1](/t.md)
+
+[//]: # (- [t1]&#40;/t.md&#41;)
 - java面试
-  - [t2-1](/java/t.md)
+  - [Java集合](/java/collection.md "Java集合")
   - [TCP/IP](/general/network/tcp-ip.md)
 - springboot面试
   - [t2-1](/springboot/t.md)
   - [TCP/IP](/general/network/tcp-ip.md)
-- other
+- 其他
   - [test](/t/t.md)
   - [自己紹介](/other/self.md)
