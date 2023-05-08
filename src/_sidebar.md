@@ -17,9 +17,12 @@
   - 算法
     - [排序算法](/general/algorithm/algorithms/sorting.md) -->
 - [t1](/t.md)
-- t2
-  - [t2-1](/t/t.md)
+- java面试
+  - [t2-1](/java/t.md)
+  - [TCP/IP](/general/network/tcp-ip.md)
+- springboot面试
+  - [t2-1](/springboot/t.md)
   - [TCP/IP](/general/network/tcp-ip.md)
 - other
-  - [t2-1](/t/t.md)
+  - [test](/t/t.md)
   - [自己紹介](/other/self.md)
