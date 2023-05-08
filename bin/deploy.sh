@@ -13,9 +13,9 @@ if [ $count -gt 2 ]; then
   exit 1
 fi
 
-if [ ! -d "/usr/local/nginx/html/doc/" ];then
-    mkdir -p /usr/local/nginx/html/doc/
-fi
+#if [ ! -d "/usr/local/nginx/html/doc/" ];then
+#    sudo mkdir -p /usr/local/nginx/html/doc/
+#fi
 
 rm -rf ${BASE_DIR}
 git clone https://github.com/hsh86/docsify.git -b main ${BASE_DIR}
