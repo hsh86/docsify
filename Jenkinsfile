@@ -20,9 +20,9 @@ pipeline{
 //             }
 //         }
     }
-    post{
-        always{
-            echo 'always say goodbay'
-        }
-    }
+//     post{
+//         always{
+//             echo 'always say goodbay'
+//         }
+//     }
 }
