@@ -20,3 +20,6 @@
 - t2
   - [t2-1](/t/t.md)
   - [TCP/IP](/general/network/tcp-ip.md)
+- other
+  - [t2-1](/t/t.md)
+  - [自己紹介](/other/self.md)
