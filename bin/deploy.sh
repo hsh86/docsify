@@ -1,0 +1,34 @@
+#!/bin/sh
+
+BASE_DIR=docsify
+WSDL_DIR=/opt/deg/api/wsdl
+
+# 二重起動チェック
+shell_name=`basename $0`
+count=`ps -ef|grep $shell_name|grep -v grep|wc -l`
+if [ $count -gt 2 ]; then
+  echo -e "ium deploy process is running. please try again later!"
+  echo "running process:"
+  ps -ef|grep $shell_name|grep -v grep|grep -v $$
+  exit 1
+fi
+
+if [ ! -d "/var/opt/deg/log/if" ];then
+    mkdir -p /var/opt/deg/log/if
+fi
+
+rm -rf ${BASE_DIR}
+git clone https://github.com/hsh86/docsify.git -b main ${BASE_DIR}
+if [ $? -ne 0 ]; then
+    echo -e "fail to get git source"
+    exit 1
+fi
+
+# ソースを移動
+cd ${BASE_DIR}
+\cp -r *.xsd ${DOC_DIR}
+\cp -r CarInfo_Backend/IUM/wsdl/*.wsdl ${WSDL_DIR}
+\cp -r CarInfo_Backend/IUM/html/*.html ${HTML_DIR}
+if [ -d "CarInfo_Backend/IUM/script" ]; then
+    \cp -r CarInfo_Backend/IUM/script/*.groovy ${GROOVY_DIR}
+fi
