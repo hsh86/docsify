@@ -14,11 +14,11 @@ pipeline{
                 sh 'cp src/* /usr/local/nginx/html/doc/'
             }
         }
-        stage("run test"){
-            steps {
-                echo 'run test'
-            }
-        }
+//         stage("run test"){
+//             steps {
+//                 echo 'run test'
+//             }
+//         }
     }
     post{
         always{
