@@ -9,7 +9,8 @@ pipeline{
         stage("deploy"){
             steps {
                 sh "chmod +x bin/deploy.sh"
-                sh 'bin/deploy.sh'
+                sh 'pwd'
+                sh 'ls'
             }
         }
         stage("run test"){
